@@ -29,7 +29,7 @@ public class StudentIdTest {
 	}
 
 	@Test
-	public void givenAnotherstudentIdWhenSameStudenIdEqualShouldReturnTure() {
+	public void givenAnotherstudentIdWhenSameStudenIdEqualShouldReturnTrue() {
 		StudentId anotherStudentId = new StudentId(new Long(20));
 		assertTrue(studentId.equals(anotherStudentId));
 		assertTrue(StudentId.NOT_SET.equals(StudentId.NOT_SET));
