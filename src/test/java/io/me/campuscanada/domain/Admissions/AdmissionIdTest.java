@@ -38,16 +38,18 @@ public class AdmissionIdTest {
 	}
 	
 	@Test
-	public void givenAAdmissionIdWhenGetIdShouldGetExpectedId() {
+	public void givenAnAdmissionIdWhenGetIdShouldGetExpectedId() {
 		Long id = admissionId.getId();
 		assertTrue(id.equals(admissionId.id));
 	}
 
 	@Test
-	public void givenAAdmissionIdWhenSetIdShouldSetAdmissionIdWithExpectedId() {
+	public void givenAnAdmissionIdWhenSetIdShouldSetAdmissionIdWithExpectedId() {
 		admissionId.setId(new Long(10));
 		Long id = new Long(10);
 		assertTrue(id.equals(admissionId.id));
 	}
+	
+	
 
 }

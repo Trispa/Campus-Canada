@@ -6,5 +6,5 @@ public interface IAdmission {
 
 	public University ChooseUniversity (University university);
 	
-	
+	public  boolean isComplet();
 }
