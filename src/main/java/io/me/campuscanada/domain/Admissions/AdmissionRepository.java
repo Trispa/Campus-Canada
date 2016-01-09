@@ -1,8 +1,7 @@
 package io.me.campuscanada.domain.Admissions;
 
 
-public class AdmiossionRepository {
+public class AdmissionRepository {
 
-	
 
 }

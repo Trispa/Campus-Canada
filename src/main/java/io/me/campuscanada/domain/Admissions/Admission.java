@@ -10,6 +10,7 @@ public class Admission {
 	
 	
 	public Admission(AdmissionId id, AdmissionStates state, University university) {
+		
 		this.id = id;
 		this.state = state;
 		this.university = university;
