@@ -1,6 +1,5 @@
 package io.me.campuscanada.domain.Admissions;
 
-public class AdmissionProcess {
+public interface AdmissionRegistry {
 
-	
 }

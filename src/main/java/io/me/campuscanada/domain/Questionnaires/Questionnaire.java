@@ -1,14 +1,22 @@
 package io.me.campuscanada.domain.Questionnaires;
 
+import java.util.ArrayList;
+
 public class Questionnaire {
 
-	private String question;
-	private String answer;
+	private ArrayList<Question> questionnairelist = null;
 	
-	public boolean IsCompleted (){
-		return false;
+	
+	public Questionnaire(ArrayList<Question> questionnairelist) {
 		
-		
+		this.questionnairelist = questionnairelist;
 	}
-	
+
+	public void  add(Question  q){
+		questionnairelist.add(q);
+	}
+	public Boolean isComplete(){
+		
+		return false;
+	}
 }

@@ -1,10 +1,20 @@
 package io.me.campuscanada.domain.Admissions;
 
-import io.me.campuscanada.domain.University.University;
+import io.me.campuscanada.domain.Questionnaires.Question;
+import io.me.campuscanada.domain.School.School;
 
 public interface IAdmission {
-
-	public University ChooseUniversity (University university);
+	public void finisheAdmission();
+	
+	public void openAdmission();
+	
+	public void cancelAdmission();
+	
+	public void completQuestionnaire(Question questionnaire);
+	
+	public School ChooseUniversity (School university);
+	
+	public School getSchools();
 	
 	public  boolean isComplet();
 }

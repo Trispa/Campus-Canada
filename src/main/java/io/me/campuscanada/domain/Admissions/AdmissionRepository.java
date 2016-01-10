@@ -1,7 +1,11 @@
 package io.me.campuscanada.domain.Admissions;
 
 
-public class AdmissionRepository {
+public interface AdmissionRepository {
 
 
+	public Admission getById(AdmissionId id);
+	
+	public void addAdmission(Admission admission);
+	
 }
