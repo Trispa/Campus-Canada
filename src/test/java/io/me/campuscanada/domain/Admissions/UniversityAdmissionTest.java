@@ -22,9 +22,12 @@ public class UniversityAdmissionTest {
 	
 	@Mock
 	private School school;
+	@Mock
 	private Student owner;
+	@Mock
 	private Questionnaire questionnaire;
-	AdmissionProcess admissionProcess;
+	@Mock
+	private AdmissionProcess admissionProcess;
 	private UniversityAdmission universityAdmission;
 	private  AdmissionId admissionId = new AdmissionId(new Long(50));
 	private final AdmissionStates STATE = AdmissionStates.OPEN;
@@ -88,11 +91,10 @@ public class UniversityAdmissionTest {
 		
 	}
 	@Test
-	public void givenAnAdmissionWhenAllRequiredQuestionsAreCompletedIsCompletShouldReturnTrue(){
+	public void givenAnAdmissionWhenQuestionnaireIsCompletedCompletQuestionnaireShouldCallIsCompletFunctionofQuestionaire(){
 		
+		universityAdmission.completQuestionnaire(questionnaire);
+		Mockito.verify(questionnaire, Mockito.times(1)).isComplete();
 	}
-	@Test
-	public void givenAnAdmissionWhenOneRequiredQuestionsAreCompletedIsCompletShouldReturnFalse(){
-		
-	}
+	
 }

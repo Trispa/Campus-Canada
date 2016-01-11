@@ -4,19 +4,28 @@ import java.util.ArrayList;
 
 public class Questionnaire {
 
-	private ArrayList<Question> questionnairelist = null;
+	private ArrayList<Question> questionnairelist;
 	
 	
 	public Questionnaire(ArrayList<Question> questionnairelist) {
 		
 		this.questionnairelist = questionnairelist;
+		
 	}
-
-	public void  add(Question  q){
-		questionnairelist.add(q);
+	public void  add(Question  question){
+		questionnairelist.add(question);
 	}
 	public Boolean isComplete(){
-		
-		return false;
+		for(Question question :questionnairelist){
+			String answer = question.getAnswer();
+			if(answer == ""){
+				if(question.isrequired())
+				return false;	
+			}
+			
+		}
+		return true;
 	}
+	
+
 }

@@ -4,7 +4,8 @@ public class Question {
 
 	private String question;
 	private String answer;
-	public static Boolean isRequired = false;
+	private  Boolean required;
+	
 	
 	
 	public Question() {
@@ -13,7 +14,7 @@ public class Question {
 	public Question(String question, String answer) {
 		this.question = question;
 		this.answer = answer;
-		
+		this.required = false;
 	}
 	public String getQuestion() {
 		return question;
@@ -27,6 +28,16 @@ public class Question {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
+	public void  deleteRequired() {
+		this.required = false;
+	}
+	public void makeItRequired() {
+		this.required = true;
+	}
+	public Boolean isrequired(){
+		return this.required;
+	}
+	
 	
 	
 }

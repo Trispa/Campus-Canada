@@ -2,7 +2,6 @@ package io.me.campuscanada.domain.Admissions;
 
 import com.google.appengine.repackaged.org.joda.time.DateTime;
 
-import io.me.campuscanada.domain.Questionnaires.Question;
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
 import io.me.campuscanada.domain.School.School;
 import io.me.campuscanada.domain.students.Student;
@@ -54,13 +53,8 @@ public abstract class Admission implements IAdmission{
 		this.setStates(AdmissionStates.CANCELED);
 	}
 	
-	public void completQuestionnaire(Question questionnaire){
-		
-	}
-	
-	public School ChooseUniversity (School university){
-		return university;
-		
+	public void completQuestionnaire(Questionnaire questionnaire){
+		questionnaire.isComplete();
 	}
 	
 	public School getSchools(){
