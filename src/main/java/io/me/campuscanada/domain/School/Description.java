@@ -1,20 +1,17 @@
 package io.me.campuscanada.domain.School;
 
-import com.google.appengine.api.datastore.Link;
-import com.google.appengine.repackaged.org.apache.commons.codec.language.bm.Lang;
-
 public class Description {
 	
 	private String province;
-	private Link  link;
-	private Lang lg;
+	private String  link;
+	private String language;
 	
 	
-	public Description(String province, Link link, Lang lg) {
+	public Description(String province, String link, String lg) {
 		
 		this.province = province;
 		this.link = link;
-		this.lg = lg;
+		this.language = lg;
 	}
 	public String getProvince() {
 		return province;
@@ -22,17 +19,17 @@ public class Description {
 	public void setProvince(String province) {
 		this.province = province;
 	}
-	public Link getLink() {
+	public String getLink() {
 		return link;
 	}
-	public void setLink(Link link) {
+	public void setLink(String link) {
 		this.link = link;
 	}
-	public Lang getLg() {
-		return lg;
+	public String getLg() {
+		return language;
 	}
-	public void setLg(Lang lg) {
-		this.lg = lg;
+	public void setLg(String lg) {
+		this.language = lg;
 	}
 	
 

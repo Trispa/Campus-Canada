@@ -1,11 +1,10 @@
 package io.me.campuscanada.domain.Admissions;
 
-import com.google.appengine.repackaged.org.joda.time.DateTime;
+import org.joda.time.DateTime;
 
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
 import io.me.campuscanada.domain.School.School;
 import io.me.campuscanada.domain.students.Student;
-
 public abstract class Admission implements IAdmission{
 	
 	protected School school;
@@ -26,6 +25,7 @@ public abstract class Admission implements IAdmission{
 		this.owner = owner;
 		this.admissionProcess = admissionProcess;
 		this.questionnaire = questionnaire;
+		
 	}
 	
 	public AdmissionId getId() {

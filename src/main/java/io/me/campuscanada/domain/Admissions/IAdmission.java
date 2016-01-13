@@ -1,6 +1,5 @@
 package io.me.campuscanada.domain.Admissions;
 
-import io.me.campuscanada.domain.Questionnaires.Question;
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
 import io.me.campuscanada.domain.School.School;
 
