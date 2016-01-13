@@ -28,6 +28,16 @@
 	</dependency>
   </dependencies>
   <build>
+  	<plugins>
+  	<plugin>
+	    <groupId>org.eluder.coveralls</groupId>
+	    <artifactId>coveralls-maven-plugin</artifactId>
+	    <version>4.1.0</version>
+	    <configuration>
+	        <repoToken>NATlggnJgbpqo2mETRPQgZK57SQoCLoXX</repoToken>
+	    </configuration>
+	</plugin>
+  	</plugins>
     <finalName>campuscanada</finalName>
     <defaultGoal>install</defaultGoal>
   </build>
