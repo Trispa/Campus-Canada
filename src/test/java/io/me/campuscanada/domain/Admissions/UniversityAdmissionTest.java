@@ -9,7 +9,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import com.google.appengine.repackaged.org.joda.time.DateTime;
+import org.joda.time.DateTime;
 
 import io.me.campuscanada.domain.Admissions.Exceptions.BadSchoolExcpetion;
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
