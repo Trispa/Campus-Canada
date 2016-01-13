@@ -1,2 +1,1 @@
-# Campus-Canada [![Build Status](https://travis-ci.org/Trispa/Campus-Canada.svg?branch=master)](https://travis-ci.org/Trispa/Campus-Canada) [![Coverage Status](https://img.shields.io/coveralls/Trispa/Campus-Canada.svg)](https://coveralls.io/r/Trispa/Campus-Canada)
-
+# Campus-Canada [![Build Status](https://travis-ci.org/Trispa/Campus-Canada.svg?branch=master)](https://travis-ci.org/Trispa/Campus-Canada) [![Coverage Status](https://coveralls.io/repos/Trispa/Campus-Canada/badge.svg?branch=master&service=github)](https://coveralls.io/github/Trispa/Campus-Canada?branch=master)
