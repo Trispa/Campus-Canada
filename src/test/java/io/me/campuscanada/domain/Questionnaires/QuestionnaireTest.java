@@ -61,8 +61,8 @@ public class QuestionnaireTest {
 
 	@Test
 	public void questiontest(){
-		Question q = new Question("quelle est votre notionnalité", "Sénégalaise");
-		Question q1 = new Question("quelle est votre notionnalité", "");
+		Question q = new Question("quelle est votre notionnalite", "Senegalaise");
+		Question q1 = new Question("quelle est votre notionnalite", "");
 		q.makeItRequired();
 		assertTrue(q.isrequired());
 		assertFalse(q1.isrequired());
