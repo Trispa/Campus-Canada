@@ -1,1 +1,1 @@
-# Campus-Canada
+# Campus-Canada [![Build Status](https://travis-ci.org/Trispa/Campus-Canada.svg?branch=master)](https://travis-ci.org/Trispa/Campus-Canada) [![Coverage Status](https://coveralls.io/repos/Trispa/Campus-Canada/badge.svg?branch=master&service=github)](https://coveralls.io/github/Trispa/Campus-Canada?branch=master) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/Campus-Canada/badge.svg?style=flat-square)](https://maven-badges.herokuapp.com/maven-central/org.eluder.coveralls/Campus-Canada/)
