@@ -54,12 +54,12 @@ public abstract class Admission implements IAdmission{
 	}
 	
 	public void completQuestionnaire(Questionnaire questionnaire){
-		questionnaire.isComplete();
+		this.questionnaire.isComplete();
 	}
 	
-	public School getSchools(){
-		
-		return null;
+	public void getSchools(){
+		this.admissionProcess.getSchools();
+	
 	}
 	
 	public  boolean isComplet(){

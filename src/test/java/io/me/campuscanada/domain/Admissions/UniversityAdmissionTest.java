@@ -93,8 +93,14 @@ public class UniversityAdmissionTest {
 	@Test
 	public void givenAnAdmissionWhenQuestionnaireIsCompletedCompletQuestionnaireShouldCallIsCompletFunctionofQuestionaire(){
 		
-		universityAdmission.completQuestionnaire(questionnaire);
-		Mockito.verify(questionnaire, Mockito.times(1)).isComplete();
+		this.universityAdmission.completQuestionnaire(questionnaire);
+		Mockito.verify(this.questionnaire, Mockito.times(1)).isComplete();
 	}
 	
+	@Test 
+	public void givenAnAdmissionAfterCompletAdmissionGetShoolShouldCallGetSchoolToAdmissionProcess(){
+		this.universityAdmission.getSchools();
+		Mockito.verify(this.admissionProcess, Mockito.times(1)).getSchools();
+		
+	}
 }

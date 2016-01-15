@@ -13,7 +13,7 @@ public interface IAdmission {
 	public void completQuestionnaire(Questionnaire questionnaire);
 	
 
-	public School getSchools();
+	public void  getSchools();
 	
 	public  boolean isComplet();
 }
