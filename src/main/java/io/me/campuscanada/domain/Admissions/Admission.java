@@ -1,19 +1,33 @@
 package io.me.campuscanada.domain.Admissions;
 
-import io.me.campuscanada.domain.University.University;
+import org.joda.time.DateTime;
 
-public class Admission {
+import io.me.campuscanada.domain.Questionnaires.Questionnaire;
+import io.me.campuscanada.domain.School.School;
+import io.me.campuscanada.domain.students.Student;
+public abstract class Admission implements IAdmission{
 	
-	private University university;
-	private AdmissionId id;
-	private AdmissionStates state;
+	protected School school;
+	protected AdmissionId id;
+	protected AdmissionStates state;
+	protected DateTime StartDate;
+	protected Student owner;
+	protected AdmissionProcess admissionProcess;
+	protected Questionnaire questionnaire;
 	
-	
-	public Admission(AdmissionId id, AdmissionStates state, University university) {
+	public Admission(School school, AdmissionId id, AdmissionStates state, DateTime startDate, Student owner,
+			AdmissionProcess admissionProcess,Questionnaire questionnaire) {
+		
+		this.school = school;
 		this.id = id;
 		this.state = state;
-		this.university = university;
+		this.StartDate = startDate;
+		this.owner = owner;
+		this.admissionProcess = admissionProcess;
+		this.questionnaire = questionnaire;
+		
 	}
+	
 	public AdmissionId getId() {
 		return id;
 	}
@@ -37,6 +51,19 @@ public class Admission {
 	
 	public void cancelAdmission(){
 		this.setStates(AdmissionStates.CANCELED);
+	}
+	
+	public void completQuestionnaire(Questionnaire questionnaire){
+		this.questionnaire.isComplete();
+	}
+	
+	public void getSchools(){
+		this.admissionProcess.getSchools();
+	
+	}
+	
+	public  boolean isComplet(){
+		return false;
 	}
 	
 	
