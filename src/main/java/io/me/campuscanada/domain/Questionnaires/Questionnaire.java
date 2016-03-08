@@ -17,8 +17,8 @@ public class Questionnaire {
 	}
 	public Boolean isComplete(){
 		for(Question question :questionnairelist){
-		
-			if(question.getAnswer().isEmpty()){
+			String answer = question.getAnswer();
+			if(answer == ""){
 				if(question.isrequired())
 				return false;	
 			}
