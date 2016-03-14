@@ -8,4 +8,9 @@ public interface AdmissionRepository {
 	
 	public void addAdmission(Admission admission);
 	
+	public void deletedAdmission(Admission admission);
+	
+	public void updateAdmission(Admission admission);
+	
+	
 }

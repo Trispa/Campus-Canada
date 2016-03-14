@@ -3,6 +3,7 @@ package io.me.campuscanada.domain.Admissions;
 import org.joda.time.DateTime;
 
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
+import io.me.campuscanada.domain.School.Programme;
 import io.me.campuscanada.domain.School.School;
 import io.me.campuscanada.domain.students.Student;
 public abstract class Admission implements IAdmission{
@@ -14,9 +15,10 @@ public abstract class Admission implements IAdmission{
 	protected Student owner;
 	protected AdmissionProcess admissionProcess;
 	protected Questionnaire questionnaire;
+	protected Programme programme;
 	
 	public Admission(School school, AdmissionId id, AdmissionStates state, DateTime startDate, Student owner,
-			AdmissionProcess admissionProcess,Questionnaire questionnaire) {
+			AdmissionProcess admissionProcess,Questionnaire questionnaire, Programme programme) {
 		
 		this.school = school;
 		this.id = id;
@@ -25,6 +27,7 @@ public abstract class Admission implements IAdmission{
 		this.owner = owner;
 		this.admissionProcess = admissionProcess;
 		this.questionnaire = questionnaire;
+		this.programme = programme;
 		
 	}
 	

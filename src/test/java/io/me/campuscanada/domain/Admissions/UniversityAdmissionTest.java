@@ -13,6 +13,8 @@ import org.joda.time.DateTime;
 
 import io.me.campuscanada.domain.Admissions.Exceptions.BadSchoolExcpetion;
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
+import io.me.campuscanada.domain.School.Cycle;
+import io.me.campuscanada.domain.School.Programme;
 import io.me.campuscanada.domain.School.School;
 import io.me.campuscanada.domain.School.SchoolType;
 import io.me.campuscanada.domain.students.Student;
@@ -32,11 +34,12 @@ public class UniversityAdmissionTest {
 	private  AdmissionId admissionId = new AdmissionId(new Long(50));
 	private final AdmissionStates STATE = AdmissionStates.OPEN;
 	private DateTime startDate = new DateTime("2011-12-02");
+	private Programme programme = new Programme(Cycle.FIRST,"Génie Informatique", "Programme ingenieur");
 	
 	
 	@Before
 	public void initialise(){
-		universityAdmission = new UniversityAdmission(school, admissionId, STATE, startDate, owner, admissionProcess, questionnaire);
+		universityAdmission = new UniversityAdmission(school, admissionId, STATE, startDate, owner, admissionProcess, questionnaire, programme);
 	}
 	
 	@Test

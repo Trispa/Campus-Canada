@@ -12,9 +12,7 @@ public class AdmissionProcess {
 		
 	}
 	
-	
 	public ArrayList<School> getSchools(){
-		
 		return null;
 	}
 }
