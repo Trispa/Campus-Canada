@@ -21,7 +21,7 @@ public class SchoolTest {
 	
 	@Before
 	public void initialise(){
-		name = "Universit� Laval";
+		name = "Université Laval";
 		school = new School(name, description,schoolType, lien);
 	}
 	@Test
