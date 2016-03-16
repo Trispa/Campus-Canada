@@ -14,10 +14,17 @@ public class StudentTest{
 	private final String lastName = "Tata";
 	private final String countryOfResidence = "Gambie";
 	private final StudentId studentId = new StudentId(new Long(20));
-
+	private final String adress = "2325, ";
+	private final String cycle = "Toto";
+	private final StudentAuthSource authSource = new StudentAuthSource(StudentAuthSource.Source.FACEBOOK, "2016f6");
+	
 @Before
 public void initialise(){
-	student = new Student(firstName, lastName, countryOfResidence, studentId);
+	student = new Student.StudentBuilder(firstName, lastName, studentId, authSource)
+			.countryOfResidence(countryOfResidence)
+			.adress(adress)
+			.cycle(cycle)
+			.build();
 }
 
 @Test
@@ -26,13 +33,7 @@ public void givenAEtudiantGetfirstNameShouldReturnExpectedFirstName(){
 	String firstname = student.getFirstName(); 
 	assertTrue(firstname.equals("Toto"));
 }
-@Test
-public void givenAEtudiantSetfirstNameShouldSetFirstName(){
-	
-	student.setFirstName("John");
-	String firstname = student.getFirstName(); 
-	assertTrue(firstname.equals("John"));
-}
+
 @Test
 public void givenAEtudiantGetlastNameShouldReturnExpectedLastName(){
 	
@@ -40,13 +41,7 @@ public void givenAEtudiantGetlastNameShouldReturnExpectedLastName(){
 	assertTrue(lastname.equals("Tata"));
 }
 
-@Test
-public void givenAEtudiantSetlastNameShouldSetLastName(){
-	
-	student.setLastName("Smith");
-	String lastname = student.getLastName(); 
-	assertTrue(lastname.equals("Smith"));
-}
+
 
 @Test
 public void givenAEtudiantGetcountryOfResidenceShouldReturnExpectedcountryOfResidence(){
@@ -55,29 +50,37 @@ public void givenAEtudiantGetcountryOfResidenceShouldReturnExpectedcountryOfResi
 	assertTrue(country.equals("Gambie"));
 }
 
-@Test
-public void givenAEtudiantSetcountryOfResidenceShouldSetcountryOfResidence(){
-	
-	student.setCountryOfResidence("Senegal");
-	String country = student.getCountryOfResidence(); 
-	assertTrue(country.equals("Senegal"));
-}
+
 
 @Test
-public void givenAEtudiantgetStudentIdShouldReturnExpectedgetStudentId(){
+public void givenAEtudiantgetStudentIdShouldReturnExpectedStudentId(){
 	
 	StudentId id = student.getStudentId(); 
 	assertTrue(id.equals(studentId));
 }
 
 @Test
-public void givenAEtudiantSetStudentIdShouldSetStudentId(){
+public void givenAEtudiantgetAdressShouldReturnExpectedAdress(){
+	String add = student.getAdress(); 
+	assertTrue(add.equals(adress));
 	
-	StudentId Id = new StudentId(new Long(10));
-	student.setStudentId(Id); 
-	StudentId studentId =student. getStudentId(); 
-	assertTrue(studentId.equals(Id));
 }
+
+
+@Test
+public void givenAEtudiantgetCycleShouldReturnExpectedgCycle(){
+	
+	String c = student.getCycle(); 
+	assertTrue(c.equals(cycle));
+}
+
+@Test
+public void givenAEtudiantgetauthSourceShouldReturnExpectedgetAuthSource(){
+	
+	StudentAuthSource auth = student.getAuthSource(); 
+	assertTrue(auth.equals(authSource));
+}
+
 
 
 

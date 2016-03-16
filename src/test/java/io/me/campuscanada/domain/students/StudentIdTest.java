@@ -1,5 +1,5 @@
 package io.me.campuscanada.domain.students;
-
+import io.me.campuscanada.domain.students.StudentId;
 import static org.junit.Assert.*;
 
 import org.junit.Before;
@@ -10,7 +10,7 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class StudentIdTest {
 	
-	static private StudentId studentId ;
+	private StudentId studentId ;
 	@Before
 	public void initialize(){
 		studentId = new StudentId(new Long(20));

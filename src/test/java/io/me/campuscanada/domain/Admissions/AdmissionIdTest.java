@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import io.me.campuscanada.domain.students.StudentId;
+
 
 @RunWith(MockitoJUnitRunner.class)
 public class AdmissionIdTest {
