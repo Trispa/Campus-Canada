@@ -11,7 +11,7 @@ import io.me.campuscanada.domain.School.Description;
 import io.me.campuscanada.domain.School.School;
 @RunWith(MockitoJUnitRunner.class)
 public class SchoolTest {
-	public static String name;
+	public static String name = "Université Laval";
 	private School school;
 	private SchoolType schoolType = SchoolType.UNIVERSITY;
 	private String lien = "www.ulaval.ca";
@@ -21,9 +21,9 @@ public class SchoolTest {
 	
 	@Before
 	public void initialise(){
-		name = "Université Laval";
 		school = new School(name, description,schoolType, lien);
-	}
+		}
+	
 	@Test
 	public void testGetName() {
 		assertTrue(School.name.equals(name));

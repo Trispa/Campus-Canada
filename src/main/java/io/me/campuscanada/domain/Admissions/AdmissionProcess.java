@@ -6,7 +6,7 @@ import io.me.campuscanada.domain.School.School;
 
 public class AdmissionProcess {
 
-	private AdmissionRegistry admissionRegistry;
+	
 	
 	public AdmissionProcess(){
 		

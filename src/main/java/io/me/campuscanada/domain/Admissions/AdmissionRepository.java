@@ -6,6 +6,8 @@ public interface AdmissionRepository {
 
 	public Admission getById(AdmissionId id);
 	
+	public void findAllAdmission();
+	
 	public void addAdmission(Admission admission);
 	
 	public void deletedAdmission(Admission admission);
