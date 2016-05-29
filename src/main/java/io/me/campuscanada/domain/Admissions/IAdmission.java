@@ -16,5 +16,5 @@ public interface IAdmission {
 	
 	public void  getSchools();
 	
-	public  boolean isComplet();
+	public  boolean isComplete();
 }

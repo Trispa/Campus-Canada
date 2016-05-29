@@ -10,19 +10,17 @@ public abstract class Admission implements IAdmission{
 	
 	protected School school;
 	protected AdmissionId id;
-	protected AdmissionStates state;
 	protected DateTime StartDate;
 	protected Student owner;
 	protected AdmissionProcess admissionProcess;
 	protected Questionnaire questionnaire;
 	protected Programme programme;
 	
-	public Admission(School school, AdmissionId id, AdmissionStates state, DateTime startDate, Student owner,
+	public Admission(School school, AdmissionId id, DateTime startDate, Student owner,
 			AdmissionProcess admissionProcess,Questionnaire questionnaire, Programme programme) {
 		
 		this.school = school;
 		this.id = id;
-		this.state = state;
 		this.StartDate = startDate;
 		this.owner = owner;
 		this.admissionProcess = admissionProcess;
@@ -38,35 +36,35 @@ public abstract class Admission implements IAdmission{
 		this.id = id;
 	}
 	public AdmissionStates getStates() {
-		return state;
+		return this.admissionProcess.getStates();
 	}
 	public void setStates(AdmissionStates states) {
-		this.state = states;
+		this.admissionProcess.setStates(states);
 	}
 	
 	public void finisheAdmission(){
-		this.setStates(AdmissionStates.DONE);
+		this.admissionProcess.finisheAdmission();
 	}
 	
 	public void openAdmission(){
-		this.setStates(AdmissionStates.OPEN);
+		this.admissionProcess.openAdmission();
 	}
 	
 	public void cancelAdmission(){
-		this.setStates(AdmissionStates.CANCELED);
+		this.admissionProcess.setStates(AdmissionStates.CANCELED);
 	}
 	
 	public void completQuestionnaire(Questionnaire questionnaire){
-		this.questionnaire.isComplete();
+		this.admissionProcess.completQuestionnaire();
 	}
 	
 	public void getSchools(){
-		this.admissionProcess.getSchools();
+		this.admissionProcess.getSchool();
 	
 	}
-	
-	public  boolean isComplet(){
-		return false;
+
+	public boolean isComplete() {
+		return this.admissionProcess.isComplete();
 	}
 	
 	

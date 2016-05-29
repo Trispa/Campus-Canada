@@ -39,7 +39,7 @@ public class UniversityAdmissionTest {
 	
 	@Before
 	public void initialise(){
-		universityAdmission = new UniversityAdmission(school, admissionId, STATE, startDate, owner, admissionProcess, questionnaire, programme);
+		universityAdmission = new UniversityAdmission(school, admissionId, startDate, owner, admissionProcess, questionnaire, programme);
 	}
 	
 	@Test
@@ -57,23 +57,28 @@ public class UniversityAdmissionTest {
 
 	@Test
 	public void testGetStates() {
+		Mockito.when(this.admissionProcess.getStates()).thenReturn(STATE);
 		AdmissionStates state = universityAdmission.getStates();
+		Mockito.verify(this.admissionProcess, Mockito.times(1)).getStates();
 		assertTrue(state.equals(STATE));
 	}
 	
 	@Test 
 	public void givenAnAdmissionWhenOpenAdmissionAdmissionStatueMustBeOPENED(){
-		universityAdmission.openAdmission();;
+		universityAdmission.openAdmission();
+		Mockito.when(this.admissionProcess.getStates()).thenReturn(STATE);
 		assertTrue(AdmissionStates.OPEN.equals(universityAdmission.getStates()));
 	}
 	@Test 
 	public void givenAnAdmissionWhenfinisheAdmissionAdmissionStatueMustBeFINISHED(){
 		universityAdmission.finisheAdmission();
+		Mockito.when(this.admissionProcess.getStates()).thenReturn(AdmissionStates.DONE);
 		assertTrue(AdmissionStates.DONE.equals(universityAdmission.getStates()));
 	}
 	@Test 
 	public void givenAnAdmissionWhenCancelAdmissionAdmissionStatueMustBeCANCELED(){
-		universityAdmission.cancelAdmission();;
+		universityAdmission.cancelAdmission();
+		Mockito.when(this.admissionProcess.getStates()).thenReturn(AdmissionStates.CANCELED);
 		assertTrue(AdmissionStates.CANCELED.equals(universityAdmission.getStates()));
 	}
 	
@@ -97,13 +102,13 @@ public class UniversityAdmissionTest {
 	public void givenAnAdmissionWhenQuestionnaireIsCompletedCompletQuestionnaireShouldCallIsCompletFunctionofQuestionaire(){
 		
 		this.universityAdmission.completQuestionnaire(questionnaire);
-		Mockito.verify(this.questionnaire, Mockito.times(1)).isComplete();
+		Mockito.verify(this.admissionProcess, Mockito.times(1)).completQuestionnaire();
 	}
 	
 	@Test 
 	public void givenAnAdmissionAfterCompletAdmissionGetShoolShouldCallGetSchoolToAdmissionProcess(){
 		this.universityAdmission.getSchools();
-		Mockito.verify(this.admissionProcess, Mockito.times(1)).getSchools();
+		Mockito.verify(this.admissionProcess, Mockito.times(1)).getSchool();
 		
 	}
 }

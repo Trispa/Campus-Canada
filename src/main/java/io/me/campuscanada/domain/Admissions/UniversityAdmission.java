@@ -13,9 +13,9 @@ public class UniversityAdmission extends Admission {
 
 	
 	
-	public UniversityAdmission(School school, AdmissionId id, AdmissionStates state, DateTime startDate, Student owner,
+	public UniversityAdmission(School school, AdmissionId id, DateTime startDate, Student owner,
 			AdmissionProcess admissionProcess, Questionnaire questionnaire, Programme programme) {
-		super(school, id, state, startDate, owner, admissionProcess, questionnaire, programme);
+		super(school, id, startDate, owner, admissionProcess, questionnaire, programme);
 		
 	}
 	public Boolean IsAnUniversity(){
