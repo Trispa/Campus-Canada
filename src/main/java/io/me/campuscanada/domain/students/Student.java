@@ -2,7 +2,6 @@ package io.me.campuscanada.domain.students;
 
 public class Student {
 
-
 	private final String firstName;
 	private final String lastName;
 	private final StudentId studentId;
@@ -10,15 +9,13 @@ public class Student {
 	private final String adress;
 	private final String cycle;
 	private final String countryOfResidence;
-	
-	
-	
- private Student(StudentBuilder builder) {
+
+	private Student(StudentBuilder builder) {
 		this.firstName = builder.firstName;
 		this.lastName = builder.lastName;
 		this.countryOfResidence = builder.countryOfResidence;
 		this.studentId = builder.studentId;
-		this.adress =builder.adress;
+		this.adress = builder.adress;
 		this.cycle = builder.cycle;
 		this.authSource = builder.authSource;
 	}
@@ -31,17 +28,14 @@ public class Student {
 		return lastName;
 	}
 
-	
 	public String getCountryOfResidence() {
 		return countryOfResidence;
 	}
 
-	
-	public StudentId getStudentId(){
+	public StudentId getStudentId() {
 		return this.studentId;
 	}
-	
-	
+
 	public StudentAuthSource getAuthSource() {
 		return authSource;
 	}
@@ -53,42 +47,46 @@ public class Student {
 	public String getCycle() {
 		return cycle;
 	}
-	public  static class StudentBuilder {
+
+	public static class StudentBuilder {
 
 		private final String firstName;
 		private final String lastName;
 		private final StudentId studentId;
 		private final StudentAuthSource authSource;
-		private  String adress;
-		private  String cycle;
-		private  String countryOfResidence;
-		
-		
-		public StudentBuilder(String firstName, String lastName,StudentId studentId, StudentAuthSource authSource){
+		private String adress;
+		private String cycle;
+		private String countryOfResidence;
+
+		public StudentBuilder(String firstName, String lastName, StudentId studentId, StudentAuthSource authSource) {
 			this.firstName = firstName;
-	       this.lastName = lastName;
-	       this.studentId = studentId;
+			this.lastName = lastName;
+			this.studentId = studentId;
 			this.authSource = authSource;
 		}
-		
-		public StudentBuilder  countryOfResidence(String countryOfResidence){
+
+		public StudentBuilder countryOfResidence(String countryOfResidence) {
 			this.countryOfResidence = countryOfResidence;
 			return this;
 		}
-		
-		public StudentBuilder adress(String adress){
+
+		public StudentBuilder adress(String adress) {
 			this.adress = adress;
 			return this;
 		}
-		
-		public StudentBuilder cycle(String cycle){
+
+		public StudentBuilder cycle(String cycle) {
 			this.cycle = cycle;
 			return this;
 		}
-		
-		public Student build(){
+
+		public Student build() {
 			return new Student(this);
 		}
 	}
-	
+
+	public StudentDTO getDTO() {
+		return new StudentDTO(firstName, lastName, studentId, authSource, adress, cycle, countryOfResidence);
+	}
+
 }
