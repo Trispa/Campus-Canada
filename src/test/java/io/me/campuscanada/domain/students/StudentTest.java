@@ -12,6 +12,7 @@ public class StudentTest{
 	private Student student;
 	private final String firstName = "Toto";
 	private final String lastName = "Tata";
+	private final String email = "campusCananda@gmail.com";
 	private final String countryOfResidence = "Gambie";
 	private final StudentId studentId = new StudentId(new Long(20));
 	private final String adress = "2325, ";
@@ -20,7 +21,7 @@ public class StudentTest{
 	
 @Before
 public void initialise(){
-	student = new Student.StudentBuilder(firstName, lastName, studentId, authSource)
+	student = new Student.StudentBuilder(firstName, lastName,email, studentId, authSource)
 			.countryOfResidence(countryOfResidence)
 			.adress(adress)
 			.cycle(cycle)
