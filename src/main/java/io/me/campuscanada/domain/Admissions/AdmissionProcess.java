@@ -1,7 +1,5 @@
 package io.me.campuscanada.domain.Admissions;
 
-import java.util.ArrayList;
-
 import io.me.campuscanada.domain.Questionnaires.Questionnaire;
 import io.me.campuscanada.domain.School.School;
 

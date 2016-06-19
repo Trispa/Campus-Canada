@@ -3,7 +3,7 @@ package io.me.campuscanada.domain.School;
 public class School {
 
 	
-	public static String name;
+	private String name;
 	private Description description;
 	private SchoolType schoolType;
 	private String lien;
@@ -15,6 +15,30 @@ public class School {
 		this.lien = lien;
 		
 		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLien() {
+		return lien;
+	}
+
+	public void setLien(String lien) {
+		this.lien = lien;
+	}
+
+	public void setDescription(Description description) {
+		this.description = description;
+	}
+
+	public void setSchoolType(SchoolType schoolType) {
+		this.schoolType = schoolType;
 	}
 
 	public Description getDescription() {

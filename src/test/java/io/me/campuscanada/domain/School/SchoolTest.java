@@ -26,7 +26,7 @@ public class SchoolTest {
 	
 	@Test
 	public void testGetName() {
-		assertTrue(School.name.equals(name));
+		assertTrue(school.getName().equals(name));
 	}
 	
 	@Test

@@ -21,10 +21,11 @@ public class StudentTest{
 	
 @Before
 public void initialise(){
-	student = new Student.StudentBuilder(firstName, lastName,email, studentId, authSource)
+	student = new Student.StudentBuilder(firstName, lastName,email, authSource)
 			.countryOfResidence(countryOfResidence)
 			.adress(adress)
 			.cycle(cycle)
+			.studentId(studentId)
 			.build();
 }
 

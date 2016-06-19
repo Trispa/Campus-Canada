@@ -66,17 +66,16 @@ public class Student {
 		private final String firstName;
 		private final String lastName;
 		private final String email;
-		private final StudentId studentId;
+		private  StudentId studentId;
 		private final StudentAuthSource authSource;
 		private String adress;
 		private String cycle;
 		private String countryOfResidence;
 
-		public StudentBuilder(String firstName, String lastName,String email, StudentId studentId, StudentAuthSource authSource) {
+		public StudentBuilder(String firstName, String lastName, String email, StudentAuthSource authSource) {
 			this.firstName = firstName;
 			this.lastName = lastName;
 			this.email = email;
-			this.studentId = studentId;
 			this.authSource = authSource;
 		}
 
@@ -84,7 +83,11 @@ public class Student {
 			this.countryOfResidence = countryOfResidence;
 			return this;
 		}
+		public StudentBuilder  studentId (StudentId studentId){
 
+			this.studentId = studentId;
+			return this;
+		}
 		public StudentBuilder adress(String adress) {
 			this.adress = adress;
 			return this;

@@ -19,6 +19,11 @@ public class DataStoreServices{
 	public Entity getEntity(Key k){
 		return dataStore.get(k);
 	}
+
+	public void delete(Key key) {
+		dataStore.delete(key);
+		
+	}
 	
 	
 	

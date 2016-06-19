@@ -1,5 +1,4 @@
 package io.me.campuscanada.persistance.students;
-import static com.googlecode.objectify.ObjectifyService.ofy;
 import io.me.campuscanada.domain.students.Student;
 import io.me.campuscanada.domain.students.StudentDTO;
 import io.me.campuscanada.domain.students.StudentId;
@@ -29,22 +28,23 @@ public class dataStoreStudentRepository  implements StudentRepository {
 	
 	
 	
-	@Override
+	
 	public Student findById(StudentId studentId) {
 		
 		String id =Long.toString(studentId.id);
 		Entity entity = loadEntityFromDataBase(id, "Student");
 		if(entity == null){
-			String message = String.format("Cet étudiant n'éxiste pas", studentId.id);
+			String message = String.format("Cet ï¿½tudiant n'ï¿½xiste pas", studentId.id);
 			throw  new StudentNotFoundError(message);
 			
 		}
 		
 		StudentDTO  studentDTO = this.transformer.toDto(entity);
-		return  new Student.StudentBuilder(studentDTO.firstName, studentDTO.lastName,studentDTO.email, studentDTO.studentId, studentDTO.authSource)
+		return  new Student.StudentBuilder(studentDTO.firstName, studentDTO.lastName,studentDTO.email, studentDTO.authSource)
 				.countryOfResidence(studentDTO.countryOfResidence)
 				.adress(studentDTO.adress)
 				.cycle(studentDTO.cycle)
+				.studentId(studentDTO.studentId)
 				.build();
 	}
 	
@@ -57,23 +57,23 @@ public class dataStoreStudentRepository  implements StudentRepository {
 
 
 
-	@Override
+	
 	public void addStudent(Student student) {
 		StudentDTO studentDTO= student.getDTO();
 		Entity  entity  = transformer.toEntity(studentDTO);
-		datastore.put(entity);
+		dataStoreServices.addEnty(entity);
 		student.setStudentId(new StudentId(entity.getLong("Id")));
 		
 		
 	}
-	@Override
+	
 	public void removeStudent(Student student) {
 		StudentDTO studentDTO= student.getDTO();
 		Entity  entity  = transformer.toEntity(studentDTO);
-		datastore.delete(entity.getKey("Id"));
+		dataStoreServices.delete(entity.getKey("Id"));
 		
 	}
-	@Override
+	
 	public void updateStudent(Student student) {
 		// TODO Auto-generated method stub
 		
