@@ -14,11 +14,9 @@ import io.me.campuscanada.domain.students.StudentId;
 import io.me.campuscanada.domain.students.StudentNotFoundError;
 import io.me.campuscanada.domain.students.StudentRepository;
 
-@Api(name = "helloworld",
+@Api(name = "campuscanada",
 version = "v1",
-scopes = {Constants.EMAIL_SCOPE},
-clientIds = {Constants.WEB_CLIENT_ID, Constants.ANDROID_CLIENT_ID, Constants.IOS_CLIENT_ID},
-audiences = {Constants.ANDROID_AUDIENCE}
+clientIds = {Constants.API_EXPLORER_CLIENT_ID}
 )
 public class StudentsService {
 	

@@ -1,18 +1,22 @@
 
 package io.me.campuscanada.domain.students;
 
+import com.google.inject.Inject;
+
 public class Student {
 
-	private final String firstName;
-	private final String lastName;
+	private String firstName;
+	private String lastName;
 	private StudentId studentId;
 	private String email;
-	private final StudentAuthSource authSource;
-	private final String adress;
-	private final String cycle;
-	private final String countryOfResidence;
-	
-	
+	private StudentAuthSource authSource;
+	private String adress;
+	private String cycle;
+	private String countryOfResidence;
+
+	public Student() {
+
+	}
 
 	private Student(StudentBuilder builder) {
 		this.firstName = builder.firstName;
@@ -32,6 +36,7 @@ public class Student {
 	public String getLastName() {
 		return lastName;
 	}
+
 	public String getEmail() {
 		return email;
 	}
@@ -39,6 +44,7 @@ public class Student {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public String getCountryOfResidence() {
 		return countryOfResidence;
 	}
@@ -46,9 +52,11 @@ public class Student {
 	public StudentId getStudentId() {
 		return this.studentId;
 	}
-	public void setStudentId(StudentId id){
+
+	public void setStudentId(StudentId id) {
 		this.studentId = id;
 	}
+
 	public StudentAuthSource getAuthSource() {
 		return authSource;
 	}
@@ -66,12 +74,13 @@ public class Student {
 		private final String firstName;
 		private final String lastName;
 		private final String email;
-		private  StudentId studentId;
+		private StudentId studentId;
 		private final StudentAuthSource authSource;
 		private String adress;
 		private String cycle;
 		private String countryOfResidence;
 
+		@Inject
 		public StudentBuilder(String firstName, String lastName, String email, StudentAuthSource authSource) {
 			this.firstName = firstName;
 			this.lastName = lastName;
@@ -83,11 +92,13 @@ public class Student {
 			this.countryOfResidence = countryOfResidence;
 			return this;
 		}
-		public StudentBuilder  studentId (StudentId studentId){
+
+		public StudentBuilder studentId(StudentId studentId) {
 
 			this.studentId = studentId;
 			return this;
 		}
+
 		public StudentBuilder adress(String adress) {
 			this.adress = adress;
 			return this;
@@ -104,7 +115,7 @@ public class Student {
 	}
 
 	public StudentDTO getDTO() {
-		return new StudentDTO(firstName, lastName,email, studentId, authSource, adress, cycle, countryOfResidence);
+		return new StudentDTO(firstName, lastName, email, studentId, authSource, adress, cycle, countryOfResidence);
 	}
 
 }

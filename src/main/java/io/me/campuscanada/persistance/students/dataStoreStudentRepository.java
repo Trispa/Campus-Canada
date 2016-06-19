@@ -61,7 +61,7 @@ public class dataStoreStudentRepository  implements StudentRepository {
 	public void addStudent(Student student) {
 		StudentDTO studentDTO= student.getDTO();
 		Entity  entity  = transformer.toEntity(studentDTO);
-		dataStoreServices.addEnty(entity);
+		dataStoreServices.addEntity(entity);
 		student.setStudentId(new StudentId(entity.getLong("Id")));
 		
 		

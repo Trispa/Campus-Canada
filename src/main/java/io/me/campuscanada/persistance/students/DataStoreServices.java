@@ -12,7 +12,7 @@ public class DataStoreServices{
 	
 	private Datastore dataStore = DatastoreOptions.defaultInstance().service();	
 	
-	public void  addEnty(Entity E){
+	public void  addEntity(Entity E){
 		dataStore.add(E);
 	}
 	

@@ -4,12 +4,28 @@
         <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
         <init-param>
             <param-name>services</param-name>
-            <param-value>io.me.campuscanada.api.endpoints.StudentService</param-value>
+            <param-value>io.me.campuscanada.api.endpoints.StudentsService</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>SystemServiceServlet</servlet-name>
         <url-pattern>/_ah/spi/*</url-pattern>
     </servlet-mapping>
-  
+  	 <filter>
+      <filter-name>guiceFilter</filter-name>
+      <filter-class>com.google.inject.servlet.GuiceFilter</filter-class>
+  	</filter>
+
+  	<filter-mapping>
+      <filter-name>guiceFilter</filter-name>
+      <url-pattern>/*</url-pattern>
+    </filter-mapping>
+	
+    <listener>
+      <listener-class>io.me.campuscanada.api.ApiGuiceServletContextListener</listener-class>
+    </listener>
+    
+    <listener>
+      <listener-class>io.me.campuscanada.api.InitialisationServlet</listener-class>
+    </listener>
 </web-app>
