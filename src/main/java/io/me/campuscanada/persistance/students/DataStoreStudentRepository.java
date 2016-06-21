@@ -12,17 +12,18 @@ import com.google.cloud.datastore.Entity;
 import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.KeyFactory;
 import com.google.inject.Inject;
-public class dataStoreStudentRepository  implements StudentRepository {
+public class DataStoreStudentRepository  implements StudentRepository {
 
 	private StudentDTOTransformer transformer;
-	private DataStoreServices dataStoreServices = new DataStoreServices();
-	Datastore datastore = DatastoreOptions.defaultInstance().service();
-	   
+
+	Datastore datastore ;
+	private DataStoreServices dataStoreServices = new DataStoreServices(datastore);
 	
 	@Inject
-	public dataStoreStudentRepository(StudentDTOTransformer transformer, DataStoreServices dataStoreServices) {
+	public DataStoreStudentRepository(StudentDTOTransformer transformer, DataStoreServices dataStoreServices, Datastore datastore ) {
 		this.transformer = transformer;
 		this.dataStoreServices = dataStoreServices;
+		this.datastore = datastore;
 		
 	}
 	

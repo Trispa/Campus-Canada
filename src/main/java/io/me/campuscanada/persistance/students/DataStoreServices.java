@@ -12,13 +12,17 @@ public class DataStoreServices{
 	
 	private Datastore dataStore = DatastoreOptions.defaultInstance().service();	
 	
+	public  DataStoreServices(Datastore dataStore){
+		this.dataStore = dataStore;
+	}
+	
 	public void  addEntity(Entity E){
 		dataStore.add(E);
 	}
 	
 	public Entity getEntity(Key k){
 		return dataStore.get(k);
-	}
+	}	
 
 	public void delete(Key key) {
 		dataStore.delete(key);

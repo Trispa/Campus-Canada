@@ -20,9 +20,10 @@ public class StudentEntityCreatore {
 	Datastore datastore = DatastoreOptions.defaultInstance().service();
     public Entity  createStudentEntityCreatore (StudentEntity studentEntity){
     	KeyFactory keyFactory = datastore.newKeyFactory().kind("Student");
-    	Key key = keyFactory.newKey(studentEntity.email);
+    	String id = Long.toString(studentEntity.Id);
+    	Key key = keyFactory.newKey(id);
     	Entity entity = Entity.builder(key)
-        .set("id", studentEntity.Id)
+        .set("email", studentEntity.email)
         .set("authSource", studentEntity.authSource)
         .set("authId", studentEntity.authId)
         .set("firstName", studentEntity.firstName)
